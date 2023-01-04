@@ -35,3 +35,25 @@
         prod = x * j
         println(s"$x x $j = $prod")
     }
+
+    // nested for loop
+    for (i <- 1 to 10 : k j <- 1 to 5){
+        // runs like i as outer for loop and j as inner
+    }
+
+    // using for lops with arrays/lists
+    var arr = List(1,2,3,4,5,6,7,8,9)
+
+    // simple iteration over list
+    for (i <- arr){
+        println(i)
+    }5
+
+    // iteration with filter
+    for (i <- arr ; if i < 6){
+        println(i)
+    }
+
+    // iteration with filter and map
+    var squares = for {i <- arr; if i < 5} yield {i*i}
+    println("Squres: " + squares)
