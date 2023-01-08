@@ -79,11 +79,63 @@ def scala_sets() =
         println(value)
     }
 
+// maps are hashmaps: key:value pairs
+// mutable and immutable maps
+
+def scala_maps() = 
+    var map1 : Map[Int, String] = Map(
+        1 -> "Aakash",
+        2 -> "Kiran",
+        3 -> "Dom"
+    )
+
+    println(map1)
+    println(map1(1))
+    println("Keys of Map: " + map1.keys)
+    println("Values in Map: " + map1.values)
+    println(map1.isEmpty)
+
+    // iterate over map
+    map1.keys.foreach {key =>
+        println("key: " + key)
+        println("value: " + map1(key))
+    }
+
+    // check if key exists
+    println(map1.contains(1))
+
+    // concat two maps
+    var map2 : Map[Int, String] = Map(
+        5 -> "Shally"
+    )
+
+    println(map1 ++ map2)
+
+
+// tuples contain heterogenous data types
+// tuples are immutable only
+// tuple can contain 1-22 items
+
+def scala_tuples() = 
+    var tup1 = (1, 2.4, "Hello", true)
+    var tup2 = new Tuple4(10, 3.1416, "World", false)
+    println(tup1)
+    println(tup2)
+
+    // value access
+    println(tup1._1) // _1 is created after tuple init
+
+    // iteration
+    tup1.productIterator.foreach{
+        i => println(i)
+    }
+
 
 @main def scala_collections() = 
-    scala_lists()
-    scala_sets()
-
+    // scala_lists()
+    // scala_sets()
+    // scala_maps()
+    scala_tuples()
 
 
 
